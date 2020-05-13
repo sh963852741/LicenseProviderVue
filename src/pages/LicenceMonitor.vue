@@ -2,7 +2,7 @@
     <Row>
         <i-table :columns="colums" :data="licenseList">
             <template slot="operation">
-                <i-button type="error">删除</i-button>
+                <i-button type="error" @click="delUser()">删除</i-button>
             </template>
         </i-table>
     </Row>
@@ -43,6 +43,17 @@ export default {
                 }
             ]
         }
+    },
+    methods: {
+        delUser(license){
+            axios.post("/api/delUsers", {license}
+            ).then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }     
     }
 }
 </script>

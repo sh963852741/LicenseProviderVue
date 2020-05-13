@@ -2,7 +2,9 @@
     <Layout class="layout">
         <Header>
             <Menu mode="horizontal" theme="dark" active-name="1">
-                <div class="layout-logo"></div>
+                <div class="layout-logo">
+                    <div style="color: #FFF; line-height: 30px; text-align:center;">一Ping就通</div>
+                </div>
                 <div class="layout-nav">
                     <MenuItem name="1">
                         <Icon type="ios-navigate"></Icon>
