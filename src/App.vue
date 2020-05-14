@@ -62,8 +62,7 @@ export default {
   },
   mounted() {
     axios.post("/api/mine", 
-        '{"firstName":"fred"}',
-        {headers: {'Content-Type': 'application/json'}}
+        {firstName: "fred"}
       )
       .then(response => {
         console.log(response);
