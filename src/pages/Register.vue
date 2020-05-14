@@ -1,11 +1,11 @@
 <template>
     <Row>
-        <i-form ref="regForm" :rules="rules">
+        <i-form ref="regForm" :model="regForm" :rules="rules">
             <FormItem label="用户名" prop="userName">
                 <i-input v-model="regForm.userName"></i-input>
             </FormItem>
             <FormItem label="密码" prop="password">
-                <i-input v-model="regForm.password"></i-input>
+                <i-input v-model="regForm.password" type="password" password></i-input>
             </FormItem>
             <FormItem label="许可证类型" prop="type">
                 <i-input v-model="regForm.type"></i-input>

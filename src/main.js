@@ -17,6 +17,10 @@ Vue.component("normal-layout", normalLayout);
 // 2. 定义路由
 const routes = [
   {
+    path: '/',
+    redirect: 'usermonitor'
+  },
+  {
     path: "/usermonitor",
     component: () => import("./pages/UserMonitor.vue")
   },
