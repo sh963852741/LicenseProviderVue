@@ -13,7 +13,18 @@ export default {
         return{
             layoutName: "normal-layout"
         }
-    }
+  },
+  mounted() {
+    axios.post("/api/mine", 
+        {firstName: "fred"}
+      )
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 };
 </script>
 
