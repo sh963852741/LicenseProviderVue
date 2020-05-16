@@ -8,6 +8,7 @@
     </Row>
 </template>
 <script>
+const axios = require("axios");
 export default {
     data() {
         return {
@@ -17,8 +18,12 @@ export default {
                     key: "userName"
                 },
                 {
+                    title: "用户ID",
+                    key: "userID"
+                },
+                {
                     title: "到期时间",
-                    key: "exp"
+                    key: "expiringTime"
                 },
                 {
                     title: "操作",
@@ -36,6 +41,21 @@ export default {
                 }
             ]
         };
+    },
+    mounted(){
+        this.getUsers();
+    },
+    methods: {
+        getUsers(){
+            axios.post("/api/GetUserList", {})
+            .then(response => {
+                console.log(response);
+                this.userList = response.data.data;
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }
     }
 }
 </script>
