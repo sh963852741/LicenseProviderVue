@@ -11,7 +11,7 @@
                 <i-input v-model="regForm.type"></i-input>
             </FormItem>
             <FormItem>
-            <i-button type="primary" @click="regist()">注册</i-button>
+                <i-button type="primary" @click="regist()">注册</i-button>
             </FormItem>
         </i-form>
     </Row>
@@ -45,9 +45,16 @@ export default {
             this.$refs["regForm"].validate((valid) => {
                 if (valid) {
                     axios.post("/api/regist", 
-                        ...this.regForm
+                        {...this.regForm}
                     )
                     .then(response => {
+                        if(response.data.success){
+                            this.$Message.success({
+                                content: `注册成功，序列号：${response.data.license}`,
+                                duration: 0,
+                                closable: true
+                            });
+                        }
                         console.log(response);
                     })
                     .catch(error => {

@@ -17,10 +17,6 @@ Vue.component("normal-layout", normalLayout);
 // 2. 定义路由
 const routes = [
   {
-    path: '/',
-    redirect: 'usermonitor'
-  },
-  {
     path: "/usermonitor",
     component: () => import("./pages/UserMonitor.vue")
   },
@@ -44,7 +40,6 @@ const routes = [
 
 // 3. 创建 router 实例
 const router = new VueRouter({
-  mode: 'history',
   routes
 })
 

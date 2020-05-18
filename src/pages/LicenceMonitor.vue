@@ -9,13 +9,14 @@
 </template>
 
 <script>
+const axios = require("axios");
 export default {
     data(){
         return{
             colums: [
                 {
                     title: "许可证号",
-                    key: "licenseNumber"
+                    key: "serialNumber"
                 },
                 {
                     title: "许可人数",
@@ -44,7 +45,19 @@ export default {
             ]
         }
     },
+    mounted(){
+        this.getLicenseStatus();
+    },
     methods: {
+        getLicenseStatus(){
+            axios.post("/api/getLicenseStatus", {}
+            ).then(response => {
+                this.licenseList = response.data.data;
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        },
         delUser(license){
             axios.post("/api/delUsers", {license}
             ).then(response => {
