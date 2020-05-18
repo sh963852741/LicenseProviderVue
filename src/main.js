@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import iView from 'view-design'
 import VueRouter from 'vue-router'
-import 'iview/dist/styles/iview.css'
+import 'view-design/dist/styles/iview.css'
 import App from './App.vue'
 import Axios from 'axios'
 
