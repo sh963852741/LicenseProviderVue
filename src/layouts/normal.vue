@@ -84,6 +84,9 @@
                 this.breadcrumbName = e.split('-');
                 console.log(e);
             }
+        },
+        mounted(){
+            this.$router.push("/usermonitor")
         }
     }
 </script>
