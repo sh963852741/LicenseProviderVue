@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import iView from 'view-design'
 import VueRouter from 'vue-router'
-import 'iview/dist/styles/iview.css'
+import 'view-design/dist/styles/iview.css'
 import App from './App.vue'
 import Axios from 'axios'
 
@@ -16,10 +16,6 @@ Vue.component("normal-layout", normalLayout);
 // 1. 定义 (路由) 组件。
 // 2. 定义路由
 const routes = [
-  {
-    path: '/',
-    redirect: 'usermonitor'
-  },
   {
     path: "/usermonitor",
     component: () => import("./pages/UserMonitor.vue")

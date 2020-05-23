@@ -54,8 +54,9 @@ export default {
                                 duration: 0,
                                 closable: true
                             });
+                        }else{
+                            this.$Message.warning(response.data.msg);
                         }
-                        console.log(response);
                     })
                     .catch(error => {
                         console.log(error);
