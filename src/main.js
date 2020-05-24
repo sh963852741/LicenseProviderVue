@@ -40,7 +40,6 @@ const routes = [
 
 // 3. 创建 router 实例
 const router = new VueRouter({
-  mode: 'history',
   routes
 })
 

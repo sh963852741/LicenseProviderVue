@@ -1,8 +1,8 @@
 <template>
     <Row>
         <i-table :columns="colums" :data="userList">
-            <template slot="add">
-                <i-button>踢出</i-button>
+            <template slot="add" slot-scope="{row}">
+                <i-button @click="delUsers(row)">踢出</i-button>
             </template>
         </i-table>
     </Row>
@@ -49,8 +49,24 @@ export default {
         getUsers(){
             axios.post("/api/GetUserList", {})
             .then(response => {
-                console.log(response);
                 this.userList = response.data.data;
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        },
+        delUsers(row){
+            axios.post("/api/kickuser",{
+                userName: row.userName,
+                userId: row.userID
+            })
+            .then(response => {
+                if(response.data.success){
+                    this.$Message.success("成功踢出");
+                }else{
+                    this.$Message.warning(response.data.msg);
+                }
+                this.getUsers();
             })
             .catch(error => {
                 console.log(error);

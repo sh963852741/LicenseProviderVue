@@ -1,15 +1,30 @@
 <template>
     <Row>
         <i-form ref="regForm" :model="regForm" :rules="rules">
-            <FormItem label="用户名" prop="userName">
-                <i-input v-model="regForm.userName"></i-input>
-            </FormItem>
-            <FormItem label="密码" prop="password">
-                <i-input v-model="regForm.password" type="password" password></i-input>
-            </FormItem>
-            <FormItem label="许可证类型" prop="type">
-                <i-input v-model="regForm.type"></i-input>
-            </FormItem>
+            <Row type="flex">
+                <i-col span="11">
+                    <FormItem label="用户名" prop="userName">
+                        <i-input v-model="regForm.userName"></i-input>
+                    </FormItem>
+                </i-col>
+                <i-col span="11" push="2">
+                    <FormItem label="密码" prop="password">
+                        <i-input v-model="regForm.password" type="password" password></i-input>
+                    </FormItem>
+                </i-col>
+            </Row>
+            <Row type="flex" >
+                <i-col span="11">
+                <FormItem label="许可证类型" prop="type">
+                    <i-input v-model="regForm.type"></i-input>
+                </FormItem>
+                </i-col>
+                <i-col span="11" push="2">
+                <FormItem label="每次授权时长" prop="time">
+                    <i-input v-model="regForm.time"></i-input>
+                </FormItem>
+                </i-col>
+            </Row>
             <FormItem>
                 <i-button type="primary" @click="regist()">注册</i-button>
             </FormItem>
@@ -36,6 +51,9 @@ export default {
                 ],
                 type: [
                     {required: true, message: '必须填写许可证类型', trigger: 'blur'}
+                ],
+                time: [
+                    {required: true, message: '必须填写每次授权时长', trigger: 'blur'}
                 ]
             }
         }
