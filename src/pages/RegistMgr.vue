@@ -48,8 +48,8 @@ export default {
                 console.log(error);
             });
         },
-        delUser(serialNumber){
-            axios.post("/api/delUsers", {license: serialNumber})
+        delUser(license){
+            axios.post("/api/delUsers", {license})
             .then(response => {
                 if(response.data.success){
                     this.getUser();

@@ -30,16 +30,7 @@ export default {
                     slot: "add"
                 }
             ],
-            userList: [
-                {
-                    userName: '张三',
-                    exp: '2020-7-12 23:11'
-                },
-                {
-                    userName: '李四',
-                    exp: '2020-7-15 23:11'
-                }
-            ]
+            userList: []
         };
     },
     mounted(){

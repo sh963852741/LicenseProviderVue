@@ -1,8 +1,8 @@
 <template>
     <Row>
         <i-table :columns="colums" :data="licenseList">
-            <template slot="operation">
-                <i-button type="error" @click="delUser()">删除</i-button>
+            <template slot="operation" slot-scope="{row}">
+                <i-button type="error" @click="delUser(row.serialNumber)">删除</i-button>
             </template>
         </i-table>
     </Row>
@@ -32,16 +32,6 @@ export default {
                 }
             ],
             licenseList: [
-                {
-                    licenseNumber: '1234581265',
-                    usingCount: 5,
-                    licenseCount: 10
-                },
-                {
-                    licenseNumber: '4567965312',
-                    usingCount: 5,
-                    licenseCount: 3
-                }
             ]
         }
     },
@@ -61,7 +51,9 @@ export default {
         delUser(license){
             axios.post("/api/delUsers", {license}
             ).then(response => {
-                console.log(response);
+                if(response.data.success){
+                    this.getLicenseStatus();
+                }
             })
             .catch(error => {
                 console.log(error);

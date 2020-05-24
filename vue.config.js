@@ -6,7 +6,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/api': {
-                target: 'http://localhost:50237', //API服务器的地址
+                target: 'http://47.112.154.147:3029', //API服务器的地址
                 changeOrigin: true
             }
         }
