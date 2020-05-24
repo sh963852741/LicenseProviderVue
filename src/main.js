@@ -21,6 +21,10 @@ const routes = [
     component: () => import("./pages/UserMonitor.vue")
   },
   {
+    path: "/taobao",
+    component: () => import("./pages/TaoBao.vue")
+  },
+  {
     path: "/licensemonitor",
     component: () => import("./pages/LicenceMonitor.vue")
   },

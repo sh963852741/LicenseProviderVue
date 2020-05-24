@@ -6,9 +6,9 @@
                     <div style="color: #FFF; line-height: 30px; text-align:center;">一Ping就通</div>
                 </div>
                 <div class="layout-nav">
-                    <MenuItem name="1">
+                    <MenuItem to="taobao" name="淘宝网">
                         <Icon type="ios-navigate"></Icon>
-                        Item 1
+                        淘宝网
                     </MenuItem>
                     <MenuItem name="2">
                         <Icon type="ios-keypad"></Icon>
