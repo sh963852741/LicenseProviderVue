@@ -21,7 +21,9 @@
                 </i-col>
                 <i-col span="11" push="2">
                 <FormItem label="每次授权时长" prop="time">
-                    <i-input v-model="regForm.time"></i-input>
+                    <i-input v-model="regForm.time">
+                        <span slot="append">分钟</span>
+                    </i-input>
                 </FormItem>
                 </i-col>
             </Row>
@@ -40,7 +42,8 @@ export default {
             regForm:{
                 userName: "",
                 password: "",
-                type: ""
+                type: "",
+                time: ""
             },
             rules:{
                 userName: [

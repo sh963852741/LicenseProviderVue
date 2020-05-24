@@ -1,12 +1,12 @@
 <template>
     <Layout class="layout">
         <Header>
-            <Menu mode="horizontal" theme="dark" active-name="1">
+            <Menu mode="horizontal" theme="dark" active-name="1" @on-select="setBreadcrumb">
                 <div class="layout-logo">
                     <div style="color: #FFF; line-height: 30px; text-align:center;">一Ping就通</div>
                 </div>
                 <div class="layout-nav">
-                    <MenuItem to="taobao" name="淘宝网">
+                    <MenuItem to="taobao" name="附加界面-淘宝网" >
                         <Icon type="ios-navigate"></Icon>
                         淘宝网
                     </MenuItem>
@@ -82,7 +82,6 @@
             setBreadcrumb(e)
             {
                 this.breadcrumbName = e.split('-');
-                console.log(e);
             }
         },
         mounted(){
